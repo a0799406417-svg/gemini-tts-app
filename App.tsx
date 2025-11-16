@@ -38,7 +38,7 @@ const App: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/synthesize', {
+      const response = await fetch('https://gemini-tts-app-self.vercel.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
