@@ -17,7 +17,11 @@ const ttsClient = new textToSpeech.TextToSpeechClient();
 const genAI = new GoogleGenerativeAI(process.env.VITE_APP_GEMINI_API_KEY);
 const geminiModel = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://gemini-tts-app-self.vercel.app',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post('/api/synthesize', async (req, res) => {
