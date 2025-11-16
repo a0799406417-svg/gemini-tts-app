@@ -38,7 +38,7 @@ const App: React.FC = () => {
     }
 
     try {
-      const response = await fetch('https://gemini-tts-app-self.vercel.app', {
+      const response = await fetch('https://gemini-tts-app.onrender.com/api/synthesize', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
